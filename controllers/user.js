@@ -347,10 +347,10 @@ exports.postForgot = (req, res, next) => {
     if (!user) { return; }
     const token = user.passwordResetToken;
     const transporter = nodemailer.createTransport({
-      service: 'SendGrid',
+      service: 'gmail',
       auth: {
-        user: process.env.SENDGRID_USER,
-        pass: process.env.SENDGRID_PASSWORD
+        user: process.env.GMAIL_USER,
+        pass: process.env.GMAIL_PASSWORD
       }
     });
     const mailOptions = {
